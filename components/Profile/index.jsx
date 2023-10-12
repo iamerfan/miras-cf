@@ -11,6 +11,7 @@ import { Login } from "@/redux/User";
 import Modal from "@/components/Profile/modal";
 
 export default function ProfilePanel(props) {
+  console.log(props);
   const initials = {
     name: props.name || "",
     email: props.email || "",

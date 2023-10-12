@@ -9,6 +9,7 @@ const getData = async (id) => {
     const res = await fetch(`${server}/api/auth/profile/${id}`, {
       cache: "no-cache",
     });
+    console.log(res);
     return res.data;
   } catch (error) {
     console.log(error);

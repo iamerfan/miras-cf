@@ -1,4 +1,5 @@
 import ProfilePanel from "@/components/Profile";
+import { server } from "@/lib/config";
 
 export const runtime = "edge";
 
@@ -7,7 +8,6 @@ const getData = async (id) => {
     const res = await fetch(`${server}/api/auth/profile/${id}`, {
       cache: "no-cache",
     });
-    console.log(res);
     return res.json();
   } catch (error) {
     console.log(error);

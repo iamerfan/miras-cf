@@ -2,8 +2,6 @@ import React from "react";
 import ProfilePanel from "@/components/Profile";
 import axios from "axios";
 import { server } from "@/lib/config";
-export const runtime = "edge";
-
 const getData = async (id) => {
   try {
     const res = await axios.get(`${server}/api/auth/profile/${id}`);

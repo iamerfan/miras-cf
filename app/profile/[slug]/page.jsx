@@ -18,5 +18,6 @@ const getData = async (id) => {
 
 export default async function Profile({ params }) {
   const data = await getData(params.slug);
-  return <ProfilePanel {...data} />;
+  // return <ProfilePanel {...data} />;
+  return JSON.stringify(data);
 }

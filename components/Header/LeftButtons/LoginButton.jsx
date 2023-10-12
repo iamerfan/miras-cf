@@ -14,7 +14,6 @@ export default function LoginButton() {
   const [dropdownActive, setDropdownActive] = useState(false);
   const isLogged = user.email ? true : false;
   const dispatch = useDispatch();
-  const router = useRouter();
 
   const handleClick = (e) => {
     e.stopPropagation();
@@ -23,7 +22,6 @@ export default function LoginButton() {
   const signOut = (e) => {
     e.stopPropagation();
     dispatch(Logout());
-    router.push("/auth/login");
   };
   const path = usePathname();
 

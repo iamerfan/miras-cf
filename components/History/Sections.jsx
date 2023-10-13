@@ -23,9 +23,9 @@ export default function Sections({ orders }) {
     return 0;
   });
   const sum = (arry) =>
-    arry.reduce((accum, current) =>
-      Math.floor(accum + current).toLocaleString()
-    );
+    arry
+      .reduce((accum, current) => Math.floor(accum + current))
+      .toLocaleString();
 
   const sections = [
     { title: "تعداد سفارشات ", data: `${allOrders.length} عدد` },
@@ -39,12 +39,6 @@ export default function Sections({ orders }) {
       data: `${sum(allDiscount)}  تومان`,
     },
   ];
-  const mapSections = sections.map((section, i) => (
-    <div key={i} className={styles.section}>
-      <h4>{section.title} :</h4>
-      <h1>{section.data}</h1>
-    </div>
-  ));
 
   return (
     <div className={styles.Sections}>
@@ -55,7 +49,12 @@ export default function Sections({ orders }) {
         width={200}
         height={250}
       />
-      {mapSections}
+      {sections.map((section, i) => (
+        <div key={i} className={styles.section}>
+          <h4>{section.title} :</h4>
+          <h1>{section.data}</h1>
+        </div>
+      ))}
     </div>
   );
 }

@@ -6,8 +6,6 @@ import Slide from "../Slider/Slide";
 import Order from "./Order";
 
 export default function OrdersContainer({ orders }) {
-  console.log(orders);
-
   return (
     <Slider
       className={styles.Orders}

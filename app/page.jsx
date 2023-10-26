@@ -9,7 +9,7 @@ import Items from "@/components/Home/Items";
 import Blogs from "@/components/Home/Blogs";
 import { server } from "@/lib/config";
 import axios from "axios";
-export const runtime = "edge";
+
 export default async function Home() {
   const data = await axios(`${server}/api/home`).then((res) => res.data);
 
